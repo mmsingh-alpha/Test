@@ -1,0 +1,142 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AttachBrowserDevLakwood" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_WebSiteAvailable" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>934,759</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>StringtoSecureString.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.AzureActiveDirectory.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Check Dev Lakewood" sap:VirtualizedContainerService.HintSize="848,594" sap2010:WorkflowViewState.IdRef="Sequence_51">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="806,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,160" sap2010:WorkflowViewState.IdRef="Sequence_54">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:UiElementExists DisplayName="Element Exists 'Lakwood DEV'" Exists="[out_WebSiteAvailable]" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
+            <ui:UiElementExists.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b857a2f5-2bd8-41d1-856d-21d555406b88" Selector="&lt;html title='Top - PowerTerm® WebConnect Application Portal' /&gt;&lt;webctrl parentid='C0' tag='SPAN' /&gt;" TimeoutMS="10000">
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:UiElementExists.Target>
+          </ui:UiElementExists>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <uix:NCheckState DisplayName="Check App State 'Published Desktops'" Exists="[out_WebSiteAvailable]" sap:VirtualizedContainerService.HintSize="806,411" sap2010:WorkflowViewState.IdRef="NCheckState_1">
+      <uix:NCheckState.IfExists>
+        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,184" sap2010:WorkflowViewState.IdRef="Sequence_52">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Target Appear Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[out_WebSiteAvailable.ToString]" />
+        </Sequence>
+      </uix:NCheckState.IfExists>
+      <uix:NCheckState.IfNotExists>
+        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="376,185" sap2010:WorkflowViewState.IdRef="Sequence_53">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Target does not Appear Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[out_WebSiteAvailable.ToString]" />
+        </Sequence>
+      </uix:NCheckState.IfNotExists>
+      <uix:NCheckState.Target>
+        <uix:TargetAnchorable BrowserURL="http://webconnect.fhmc.local/webconnect/AppPortal/Main.asp" DesignTimeRectangle="252, 243, 90, 100" ElementType="Cell" FriendlyName="'Lakewood Dev'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table' tableCol='5' tag='TABLE' /&gt;&lt;webctrl tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl css-selector='body&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table' tag='TABLE' /&gt;&lt;webctrl tag='TD' type='' aaname='   Lakewood Dev ' /&gt;" ImageBase64="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" InformativeScreenshot="a635d6aa4e289862217478d6cb571faa.png" ScopeSelectorArgument="&lt;html title='Top - PowerTerm® WebConnect Application Portal' /&gt;" SearchSteps="FuzzySelector">
+          <uix:TargetAnchorable.Anchors>
+            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+              <uix:Target DesignTimeRectangle="250, 205, 510, 36" ElementType="Text" FriendlyName="'Published Desktops'" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableCol='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' aaname='Published Desktops and Applications' check:text='Published Desktops and Applications' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAgIAAAAoCAYAAACM7ZK1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAWASURBVHhe7do7jixFFIRhlsQq8FkAFhtAwsDERTgsAAlWAC4OFj4OHh47GRRXN1DMIao6q9VzmSH/T0qpKysrnzWnDo+PngAAwLZIBAAA2BiJAAAAGyMRAABgYyQCAABsjEQAAICNkQgAALAxEgEAADZGIgAAwMZIBAAA2BiJAAAAGyMRAABgYyQCAABsjEQAAICNkQgAALAxEgEAADb2YonAZ1999/Txp188ffntj+9r/u2Hn39910bFPvn865vPpdbHo2Tff/z51/va/9ZLrveteo3nJJqL5/XLb7+/q/vm+5/+qXtpOb72CACaZ4mAP8Kz6KN+1U6JgNvMoqD/aCvrbR+g/7PVczK9W26/+p7d40MmAu5Te2EkAgBW1EQgg6PrriYD9yYCVz2ijyOrHxi3yQ+/16/9e6SV9ZIInHNbl5fyIc/B42gvAOCKm4nA/PAooPn67J9yMhHwb19b+6h5DvlRzXYuTkzy3mw3PwoaO++3j7THn+VqIiBtP2WOMe+vrteyv/z4ZNFz0u77nuT9uV/zY5b3XI72Kd+bLDm23yOtJ98plemec5K2tzkHyXc32+U5ZT+zneVezr8VzT/NPvKZWa+Sc2n3NU4bX9oe5L6tnkP2f9QGwOv34olAtvO12svsWzyHszZpBmTx2P54iutmvxmQz8Y++8C4jZ8zXas+x3Bb74k/AJ77lfWK15VjHH0A8uy8nrnmfLbNyc/5WvfuNfv0fql4Pp5fvpP3npN4v9Rfe0/E9Srm6zam98Bn6bPIvZx/K3lebY36nWeXPL/ce4+TdSvjn7VR8XrnHNtzAN6m5f804ICgP/oZADJwWAZc02/VOfBmMLU5XgtKqfXhcVqw0+9Wl/24Tatr3GbOb+6L+/O8ZNZdWe/s33JtGaR9Jt5/cR9tr/JZ12n8bJNruSXfnSzqU+ZcZM4513/1nOa7e/Scx7z67mb/6i/3yXs517g6d7fJkvNznfqzNr6v892a6105h1yr6wC8TUv/s2AGlwwAM7ip2AwushJMPQcHqgxmWdxv68PjOJDlnFvR/dZP1q0E6QyuMgNq7lMrcmW9LhmwpX0AxHubZzLP7uhZ12l88fnOciTH8V762n3O/RKPc/bOrJ6T34t81tca2+59d/M90zzaXs41tn5S9ul9avObbWSOn9fZbu7xyjmI36cs+QyAt+HmvxGYzoKbirVgNYNJC4KeQwZmy7H9TOvDQdtBKYOp5zy1frJOYx9xmznnuZa2T2durTfXlfvczkhaMPecvFft2aP+zP2qaH6N25x9vOZcZM75EefUShuzvbuuuzUPafs213hr7md7craX0sb3tfq12d/KOUxq677bOwLg9bqcCIj/4B10HDhUbAaXFpRaMPUcMlClGaRaHxoz28hRIFMbB2D343Vl3y1Im9vknNscpLVV37Od3VpvXmcAdp3XIrrveq9H/era82nnNOcwtWcm74f3P5/xHNs47dzmc7kHXtd0tE+5J673mFff3ZXn2hp9Bn5O9FvPtHFae9f5HGVl/NU5tnNIetb9HJ0BgNfprkQgg9Ms5sAxi4ONnAU5BzTNxW1cMkC1PvxMthMHuFkcuDKYzXIW3Fp7lQzKqe2N53rPerM/7+88I11LBv55T9p9lZzD0T7l2TbZVv35t8df/QDdc04eL/s23/MY7XxUcn1zf13ybyf30s+2NUob08/Me55vjjX3ROO08aXNPfdt5RyO1n+0/wBer2eJAHD08diJP3r5oZ3yQwgAbxmJAJ4hESARALAXEgE8QyJAIgBgLyQCAABsjEQAAICNkQgAALAxEgEAADZGIgAAwMZIBAAA2BiJAAAAGyMRAABgYyQCAABsjEQAAICNkQgAALCtp6e/AY1cCIxFFWY9AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector" />
+            </scg:List>
+          </uix:TargetAnchorable.Anchors>
+        </uix:TargetAnchorable>
+      </uix:NCheckState.Target>
+    </uix:NCheckState>
+  </Sequence>
+</Activity>

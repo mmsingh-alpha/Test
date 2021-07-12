@@ -1,0 +1,166 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ScreenVerification" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Search_String" Type="InArgument(x:String)" />
+    <x:Property Name="out_result" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>934,1626</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Terminal</AssemblyReference>
+      <AssemblyReference>UiPath.Terminal.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Terminal.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.AzureActiveDirectory.Activities</AssemblyReference>
+      <AssemblyReference>StringtoSecureString.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Lakewood Dev - PowerTerm WebConnect HostView" sap:VirtualizedContainerService.HintSize="434,1461" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" Version="V1">
+    <uix:NApplicationCard.Body>
+      <ActivityAction x:TypeArguments="x:Object">
+        <ActivityAction.Argument>
+          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+        </ActivityAction.Argument>
+        <Sequence DisplayName="Do verify the screen text" sap:VirtualizedContainerService.HintSize="376,1172" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="GetText" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NClick ClickType="Single" DisplayName="Click 'Terminal'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick.Target>
+              <uix:TargetAnchorable DesignTimeRectangle="40, 31, 34, 19" FriendlyName="'Edit'" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Edit' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Edit' role='menu item' automationid='' check:text='Edit' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAXCAYAAABnGz2mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACySURBVEhL7ZKBCQMhDEUzlwM5hyNkGpdxCXGB1FwV7fUOzLW04ciDYIgJ+egHUooJk2LCpJgwKYvCInkAgil8bFcvcJ8jTDVNSK7nFxAIW1ly1rc6P7ixsO3Lnt/rEKe+PsPnZINjD7xx0WO+Vka970ro6t1e2D5f47MX49dySKN8JsaEdbj+96+cPcZGb1uin2pH5t+6alub/a75f48Jk6JXWCmFNAbknEljQAiB9EWgB7WcpIiYYEWHAAAAAElFTkSuQmCC" InformativeScreenshot="09fdc0cc84bb9bf3ab5eacda9636d7c8.png" ScopeSelectorArgument="&lt;wnd app='ptermx.exe' cls='TERM' title='Lakewood Dev - PowerTerm WebConnect HostView' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                    <uix:Target DesignTimeRectangle="74, 31, 60, 19" FriendlyName="'Terminal'" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Terminal' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Terminal' role='menu item' automationid='' check:text='Terminal' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAAXCAYAAAC74kmRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEOSURBVFhH7VUBDsMgCPRdPoh3+ARf42f6iaYfYKI0U1vd3IxLhpcQREHxkFahcCwCWIvFIoC1WCwCWIvFWwQ4UKjUVbTd2GMgNotaafx8a4fQEd/5Avo2/w0WAZMJCE/2bAvwHoToB6B5juPc0xe842ZpvWyn9AweW7jx86tpa9KGcfaaYwNfElDYDjhBmi8v5ZPUFsOM98suE+ycvLjEceflMr8UZcwsArLqs4RkyyR67NqYUNhMZJRaTBsDCHhVEUKPXRsTEjs7e0OrazFtDGiBu99hI/GAll0bExKbqn+2VPbrLGPaGPwRnNkCVHU+UwPCnBfwf1gEsBaLRcBxHChZ1L7vKFmUMQblisEH7cQp5zfQACIAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NClick.Target>
+          </uix:NClick>
+          <uix:NClick ClickType="Single" DisplayName="Click 'Select Screen Alt+F10'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick.Target>
+              <uix:TargetAnchorable DesignTimeRectangle="3, 3, 212, 22" FriendlyName="'Select Screen Alt+F10'" FullSelectorArgument="&lt;ctrl name='Edit' role='popup menu' /&gt;&lt;ctrl automationid='121' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Edit' role='popup menu' /&gt;&lt;ctrl automationid='121' role='menu item' check:text='Select Screen&amp;#x9;Alt+F10' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANgAAAAaCAYAAADVAJJSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK2SURBVHhe7ZnLceMwDIbVSgrw3eMu7BZ8ydUFpAJflEIy4zKy9xTi8WH3yBX4kMAHaCoyM7TyH77JiABJEOBPMkl3u90UAKAOEBgAFRkF1n/+/VHe//wDYLVAYABUBAIDoCIQGAAVgcAAqAgEBkBF2hRYf1Rd11mO6jXlM3JRu26rDh8p20JmxQG+w+t+yO3+ErQvqSn1dTUzvJy+JruuaVBLVmfP9wG0J7CPs3rhCRi+Dz2zRywthtB3dhxgNpTjzVHtNmENeF3m1lfy/1KHDYl5mM8TGPm777lz3ac9gdFpsjmrt7BdZElSMn1nxwHm8nba6hvD/ZxsvC5z63vPn+xMYFRndoPGsSyjPYHpBAhXtb5V3NUvnDpJH8KeYNa268087jv9TJGeDOFYzn+rdvvt0GbnlWLJreNU77nSFpRDWzd9k/HDzNU0VyPqz+vrcH3DdgfZp36RoALBLaVBgRHTBjablwgSNyTCJIa3Sz5mvHjD3itGKo7cWLy9JN6wnW0iKrR3QKwMT1SUU14HnqMgXyPURxKYFaRlqp2z/3qBWexJrxPknfoWnQhWAMlHt3/ntLNEcRSMlY0l0R7FUhjbkxJubPqeNjZfe0FeB8SDOILsENjImPiSjS35lPSNbD6z4qDvxbGUx/Z80NpikUTPZb12KQ+5GyyXN7KzfoGgIsEtpD2B9WeWHP4cM0WJFx8WI+WTe9YJxRDjKB0rF29p/9xGeWJoU0d/QDJ5NTcRX7uUB/J/gMC8A+/xOW9PYHqR7FTj17VORmgLkpL0icd1Twr9fxjPz5GJIzlWEAchxVKyjtR4K4FyHh8w/Jnor12uUYp7eSN7IEz9+66ZY3pqPoYGBQbAeoDAAKgIBAZARSAwACoCgQFQEQgMgIpAYABUJBLY9Xr9Udy8AKwZCAyAatzUfzSBOCCA7BCUAAAAAElFTkSuQmCC" InformativeScreenshot="48247d33660b0c3f3048ae53e7596044.png" ScopeSelectorArgument="&lt;wnd app='ptermx.exe' cls='#32768' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                    <uix:Target DesignTimeRectangle="3, 25, 212, 22" FriendlyName="'Clear Screen Alt+F11'" FullSelectorArgument="&lt;ctrl name='Edit' role='popup menu' /&gt;&lt;ctrl automationid='122' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Edit' role='popup menu' /&gt;&lt;ctrl automationid='122' role='menu item' check:text='Clear Screen&amp;#x9;Alt+F11' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANgAAAAaCAYAAADVAJJSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKZSURBVHhe7ZhLspwwDEVZFfvxbhgm+2AhyYitdPUgGTqWv7KwDamgLsK7g1OvkX9C8rX1mN7vtyW+/fj1Ub7//A3AY0m6gsAAUGAnsNfr9VHSugA8GQgMAEUgMAAUgcAAUAQCA0ARCAwARW4osM0u82SnKTIvdvP21Zpptssm+1/Aasp6k7Frqw+4lNW4WJtV2P8lxzQ25TAwL1tp9zlu5LZnv4h7CWxb7OwCY9batvhnJYH5NVmA83pADYr5bKyZZT55jv82373+8cA2br1KSD37tdxIYOGFK3FVKAmMTrB8S4JPsC2zv13S39KmIbAEtbeE1LNfw30EJm+SHSKAvn8qB8o4X3okey5Bwlhj5kY5QG2inMjU5WoQf2Ouji9te3yPpZSl7bWfCsU05tHfZPxwSzkOOUnxqUtJGi9zSKSx0p6g9t64lv0a7iWw4U3CAyiC6W6h/SaV/UcbuQip3KDB1p6X23u+jOxs0yj/D3A7qjwzsflnHjMRv8xIYEyUjroaovavLrDhi7KAVzdDpNqwyX6ULEGc1yem64+Yq+dL10fpy0nfHoIsC+m53FA8Fifi7CgiOoojtX9lgcUboz51OCyAvc1f2fnpeBT8Qk54bw051ylfONKX8779/9C77kWyK5+HORvdYKM4UntvXMt+DTcSmCPePpXI3Ebdf0Wk343yjcan8sNv8KNkOVY3f7YHkYd5+W/WfzdXx5ehXY7v+PY0eH4y/GDlsejFBQI7BXeiwguDnW45ISKAsp8vM0Kywjj+GXgUfGqT87Tb9psg0vSlZ5fjR749C/oAtT9weJlYxyJ/sKpy0uMojtQOgQHwKCAwABSBwABQBAIDQBEIDABFIDAAFIHAAFAEAgNAEQgMADXe9g/yrYe23f/47AAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NClick.Target>
+          </uix:NClick>
+          <uix:NClick ClickType="Single" DisplayName="Click 'Edit'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick.Target>
+              <uix:TargetAnchorable DesignTimeRectangle="79, 56, 26, 24" FriendlyName="'TOOLBAR_BUTTON'" FullSelectorArgument="&lt;wnd cls='TOOLBAR_BUTTON' idx='3' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TOOLBAR_BUTTON' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB4AAAAcCAYAAAB2+A+pAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACISURBVEhL7ZBBDoAgDAT7dJ/GzzDENGBdAsVSPXSTSTlIh5VSSvkLQuxGiN34p5iIIOhbLUOxjJV8ScwT3ZllSlzm/XxA0I4e6sYlRSKjlasaV7CYJ9oledWYH3Kddb/drHEbM7EMi58Pqu3RvpahGLO5cY/tjXt82ngEuteyJLYgxG6E2ImUTy3jLc9P8WhaAAAAAElFTkSuQmCC" InformativeScreenshot="e3dc158a7efdf58252738adbab656504.png" ScopeSelectorArgument="&lt;wnd app='ptermx.exe' cls='TERM' title='Lakewood Dev - PowerTerm WebConnect HostView' /&gt;" SearchSteps="FuzzySelector, Image">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                    <uix:Target DesignTimeRectangle="40, 31, 34, 19" FriendlyName="'Edit'" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Edit' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Edit' role='menu item' automationid='' check:text='Edit' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAXCAYAAABnGz2mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACySURBVEhL7ZKBCQMhDEUzlwM5hyNkGpdxCXGB1FwV7fUOzLW04ciDYIgJ+egHUooJk2LCpJgwKYvCInkAgil8bFcvcJ8jTDVNSK7nFxAIW1ly1rc6P7ixsO3Lnt/rEKe+PsPnZINjD7xx0WO+Vka970ro6t1e2D5f47MX49dySKN8JsaEdbj+96+cPcZGb1uin2pH5t+6alub/a75f48Jk6JXWCmFNAbknEljQAiB9EWgB7WcpIiYYEWHAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NClick.Target>
+          </uix:NClick>
+          <ui:GetFromClipboard TimeoutMS="{x:Null}" DisplayName="Get From Clipboard" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetFromClipboard_1">
+            <ui:GetFromClipboard.Result>
+              <OutArgument x:TypeArguments="x:String">[GetText]</OutArgument>
+            </ui:GetFromClipboard.Result>
+          </ui:GetFromClipboard>
+          <Assign DisplayName="Assign Result" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_result]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">[GetText.Trim.Contains( in_Search_String)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <uix:NClick ClickType="Single" DisplayName="Click 'Terminal'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick.Target>
+              <uix:TargetAnchorable DesignTimeRectangle="8, 84, 1091, 308" FriendlyName="'client'" FullSelectorArgument="&lt;wnd cls='TERMWIN' /&gt;&lt;ctrl role='client' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TERMWIN' /&gt;&lt;ctrl role='client' automationid='' /&gt;" ImageBase64="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" InformativeScreenshot="259882a36ade95edb1ebfbfdf9857c05.png" ScopeSelectorArgument="&lt;wnd app='ptermx.exe' cls='TERM' title='Lakewood Dev - PowerTerm WebConnect HostView' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <uix:Target DesignTimeRectangle="74, 31, 60, 19" FriendlyName="'Terminal'" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Terminal' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Terminal' role='menu item' automationid='' check:text='Terminal' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAAXCAYAAAC74kmRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEOSURBVFhH7VUBDsMgCPRdPoh3+ARf42f6iaYfYKI0U1vd3IxLhpcQREHxkFahcCwCWIvFIoC1WCwCWIvFWwQ4UKjUVbTd2GMgNotaafx8a4fQEd/5Avo2/w0WAZMJCE/2bAvwHoToB6B5juPc0xe842ZpvWyn9AweW7jx86tpa9KGcfaaYwNfElDYDjhBmi8v5ZPUFsOM98suE+ycvLjEceflMr8UZcwsArLqs4RkyyR67NqYUNhMZJRaTBsDCHhVEUKPXRsTEjs7e0OrazFtDGiBu99hI/GAll0bExKbqn+2VPbrLGPaGPwRnNkCVHU+UwPCnBfwf1gEsBaLRcBxHChZ1L7vKFmUMQblisEH7cQp5zfQACIAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NClick.Target>
+          </uix:NClick>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Search String: &quot; + in_Search_String + &quot; found: &quot; + out_result.ToString]" />
+        </Sequence>
+      </ActivityAction>
+    </uix:NApplicationCard.Body>
+    <uix:NApplicationCard.TargetApp>
+      <uix:TargetApp Area="-8, -8, 1382, 655" FilePath="C:\Program Files (x86)\Ericom Software\PowerTerm WebConnect 5.8 Clients\ptermx.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKySURBVFhHxZPLaxNRHEaDSEUp2ApSBV+4d9Uq+ADBB1gxoIJgVMRnoKAiRIwPiIioG11I3QmadiG4NRvXLrLTaCqtaWpM1Ma2CS78Bz6/3+1M5ybzyEwmwQuHJJPcOefOvYn4GYlEAkEwpoUbsVgMJoVCIRD6XON2/oebNJPJtKR5jhAoJBqNolardQW5t6FxH/Ijp5V1gkABTgerXWQbAgfE43GgPhaa7LtUmIBxYOEFMD8KzD0Ffj8EqveAX0ngx3UyApTPA6WTwMwxYHoYKOwDvu4iQ8DkNmRfbw0RUKN87jl5QvkDiu8CP2+ox4ryRYpPGeJDFO4FpnYoqfp+YhOQH0B2vD9EwILIufLZR5SnKL/ZsLf4dgIoHuGq91O+m/JB67v8BuDzWmTH+kIEzMtjf8wAeey3GuRLoumDXP0eyoesa4YcudUM6A0RoOT3Kb9t3bx8Tu25+Vldm9xuvc9vpnyA8j7g4yoGrAwRUBX5HevmlQvA9xgfPfe9OLx0fel7JV8PfOpnQC8DepB91RMiYFYOnXHz8mXKT1N+nPLDi6d9aqcln9hC+TqK11As8hXAh2UMWB4igCcelWsUU146s3joZqLcdx46/tUiB5KdQR8NAZWrXDlfS2cteZGHriCHblBN/jN61JNqtYpnb7644hnw933Ek1YBreSCa4Dsq+ydF10N8INXgB+5YAuQIRHm6faiWwHq7+IHtwC/cqE5QD1ap/12QiaLTKcjASaVSAq1Ky+VTL9uogIubWxEi3ES6shvWgYI+jUdt4DIyFuFW4QZKIuzBaTTad/YAjS5U4QuNmkIkIOVy+V84zfASWwL0OX86O9VAjSBm9xJbGILsEk8XtVkDTPCFJtnyCtCzRV5vV4PTHOAoIt9B6jVtEOTXGg3oL3RJBf+e0BwkvgHe2f17EYyZ+IAAAAASUVORK5CYII=" InformativeScreenshot="96e0156fd729f5321920b4eeeeb5bf18.png" Selector="&lt;wnd app='ptermx.exe' cls='TERM' title='Lakewood Dev - PowerTerm WebConnect HostView'/&gt;" />
+    </uix:NApplicationCard.TargetApp>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+  </uix:NApplicationCard>
+</Activity>

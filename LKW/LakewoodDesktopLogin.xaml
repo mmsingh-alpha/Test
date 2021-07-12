@@ -1,0 +1,322 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="LakewoodDesktopLogin" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_DesktopAppOpen" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_message" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1296,3203</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>LakewoodDesktopLogin_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="28">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="50">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>StringtoSecureString.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.AzureActiveDirectory.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="LakewoodDesktopLogin" sap:VirtualizedContainerService.HintSize="1306,3038" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="IsIcon" />
+      <Variable x:TypeArguments="x:Boolean" Name="IsDesktopApp" />
+      <Variable x:TypeArguments="x:Boolean" Name="IsLKWDevApp" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NCheckState DisplayName="Check App State 'Lakewood'" Exists="[IsIcon]" sap:VirtualizedContainerService.HintSize="1264,971" sap2010:WorkflowViewState.IdRef="NCheckState_1">
+      <uix:NCheckState.IfExists>
+        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="476,705" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Program Manager" sap:VirtualizedContainerService.HintSize="434,549" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,260" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ClickType="Double" DisplayName="Click 'Lakewood'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="0, 510, 74, 70" FriendlyName="'Lakewood'" FullSelectorArgument="&lt;wnd cls='SysListView32' title='FolderView' /&gt;&lt;ctrl name='Desktop' role='list' /&gt;&lt;ctrl name='Lakewood' role='list item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SysListView32' title='FolderView' /&gt;&lt;ctrl name='Desktop' role='list' /&gt;&lt;ctrl name='Lakewood' role='list item' automationid='' check:text='Lakewood' /&gt;" ImageBase64="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" InformativeScreenshot="8b36665e0287520be007313baf713e62.png" ScopeSelectorArgument="&lt;wnd app='explorer.exe' cls='Progman' title='Program Manager' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="0, 0, 1366, 679" FilePath="C:\Windows\explorer.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEYSURBVFhH7ZYxbsJAFER9JOpUqSi4RHyDHIaOCokzIKXnAiClAQkkGqCkB2uxrdnMCgb0WfhV/KTXmPkz7nDR0RE5LT7L2mB0XtvD6XuI5R/TXasiZuCx9n0vEYtHs2FrdRjfGDON1fIrhP0w1xKzJC1/5Pl3EKr1typ9SswSFfIUs0SFPMUsUSFPMUtUyFPMEhXyFLNEhTzFLFEhTzFLVMhTzBIV8hSzRIVWm0no/2z//h+etbltOlQ3ZokKvTIebTpUN2aJCqnCHFU3ZokKqbIcVTdmiQqpshxVN2aJClnLUq03mCUqZC1Ltd5glqiQtSzVeoNZokLWslTrDWZJ/bC8DlnLUo03t9+EClWGn+6Sc9PxnymKC0ETBfHguqc6AAAAAElFTkSuQmCC" InformativeScreenshot="a189af012c0a5e609f65bb13e4dcf74e.png" Selector="&lt;wnd app='explorer.exe' cls='Progman' title='Program Manager'/&gt;" />
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+          <Delay DisplayName="Delay for  8 secs" Duration="00:00:08" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+        </Sequence>
+      </uix:NCheckState.IfExists>
+      <uix:NCheckState.IfNotExists>
+        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="376,286" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="variable1" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign - Out Message" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_message]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["'Lakewood Desktop ICON' does not found."]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log Message-icon not found" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[out_message]" />
+        </Sequence>
+      </uix:NCheckState.IfNotExists>
+      <uix:NCheckState.Target>
+        <uix:TargetAnchorable DesignTimeRectangle="0, 510, 74, 70" FriendlyName="'Lakewood'" FullSelectorArgument="&lt;wnd cls='SysListView32' title='FolderView' /&gt;&lt;ctrl name='Desktop' role='list' /&gt;&lt;ctrl name='Lakewood' role='list item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SysListView32' title='FolderView' /&gt;&lt;ctrl name='Desktop' role='list' /&gt;&lt;ctrl name='Lakewood' role='list item' automationid='' check:text='Lakewood' /&gt;" ImageBase64="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" InformativeScreenshot="8df75fa4d2e5ffab683e5ad0f7002bdb.png" ScopeSelectorArgument="&lt;wnd app='explorer.exe' cls='Progman' title='Program Manager' /&gt;" SearchSteps="Selector, FuzzySelector" />
+      </uix:NCheckState.Target>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NCheckState>
+    <If Condition="[IsIcon.Equals(True)]" DisplayName="If Icon available on desktop" sap:VirtualizedContainerService.HintSize="1264,1392" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <uix:NCheckState DisplayName="Check desktop App State 'Options'" Exists="[IsDesktopApp]" sap:VirtualizedContainerService.HintSize="1228,1215" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="20">
+          <uix:NCheckState.IfExists>
+            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="924,989" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: fhmcwebconnect - Ericom Application Zone" sap:VirtualizedContainerService.HintSize="882,895" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" Version="V1">
+                <uix:NApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="848,606" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NCheckState DisplayName="Check Lakewood Dev App" Exists="[IsLKWDevApp]" sap:VirtualizedContainerService.HintSize="806,512" sap2010:WorkflowViewState.IdRef="NCheckState_3" Timeout="10">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,260" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ClickType="Double" DisplayName="Click 'Lakewood Production'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="18, 103, 58, 70" FriendlyName="'Lakewood Dev'" FullSelectorArgument="&lt;wnd cls='SysListView32' /&gt;&lt;ctrl name='Lakewood Dev' role='list item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SysListView32' /&gt;&lt;ctrl name='Lakewood Dev' role='list item' automationid='' check:text='Lakewood Dev' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD4AAABKCAYAAADjcueTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASiSURBVHhe7ZnbaxxlGMaHUlIsARNBUkGteN+rRMFpQfAARgxoQWiqiPUwsKAipBgPEBFRbxRW0juhTXJR8NbA0ute7F1dTUriZpO4q2abdBcv/Ace3/eb+Wa+mczszm5mdmcy88DDzHec9/eddibRlpaWkEVrhUIBWbSGjCoHj0tzc3M9eVCKBXx2dtZ2tVrtyWrbOBUpeBDs6upqV3vbsOMcgMjAZ2Zm0Gq1YjH3HbUiBfebySicCnC/A6tf83JPDbhhGEB7+cgu31pII/gKcP8n4GAR2P8BuPcN0PwS+Gce+OtjcgGoXwF2LwHbrwFb00D1OeAPnTwFbJxD+eaTKQRvEfT+NfL3BP01AX8B/H1VLF/U3yXgyxbwSwT6LLD5tIAV5euPA2sTKK+MpxD8PkPTTO99S9ALBP2Ja+9i53Wg9grN8vMEfZ6gJ52ytUeB3x9GeXksheAHvLy/I3Be3p+6oG3ArRdpti8Q9JSTZ0Gj8iCBj6YQXEB/RdCfOVD1t8WelmmRt/GUc792lqAnCHoM+PU0gT+QQvAmQ3/uQDXeAf6kN7Ad2te1aTvfLhfQjwC/jRP4KIGPoHxjJIXge3yYWVD19wn6DYK+SNAvm6f35jMO9PoTBH2GgB8iYIY+Bdw5QeAnUwhOJzgaHxEwQe++aR5m2xT8Fh1m9JOlvTAfiY+ieMAbH9JM03X3LQe6RodZlQ+zSRH0v4uvdnSz2cSPP98NdCLB/7utdXQ38G7Q7MSB877lvdnJxxI8jDuBh4FmJwacxfDytO7kYwWuaZoAD+Mg8LDQ7ESAMzQvYb/97GcOmiFVpxpcuqEtoPXBdQGp5ksL8Pcec1sZBD9Q1VwnseBsNU91ELhW+EU4CF4ODA9qYsD9/j8V5EPgCrQfvAosnQhwPrAqlUpohwX3A04MuArNMx/qyuAKWBC0H7B0YsBDQ9OVg1Yt4SWwPCM6wQ8VnKHb7XbP9oKzVeDEg4vZ68ceaHaqwPuVF5qdWfB+fBQNBTwJysGzphw8a8rBsyYf8BIMTUexZiW7qtf6g1RwbDm4oxz8kEqG8qFhlGSuUp/vlbJaEbqsrxlUavZhN/U+i+v7tlXbkEKW6cViNOCOvLB8X0NR7wBVMigQStDVHhjO03Uzn1Qryntuq/QlYNTnhSvj/jQ1BkW9gXPQ1mg6HZr1dYKWAEKeWRHmiDhfL4JrlgzqoyTTPHBWn6KtuUKk7JXSrczq21QwS3hw1wOVIEV9gqa0s/xJPgGakm2pnQ1M9dSgu8ENFJxn2xWYCm7ecwDOrFsD4vNUsaQ9S5z/y+pta4+jCzZ8WR9L3b1EzYDMPSzyaIYM14zLe6uOa4CcftyHnhKQN81yte2hTNmOPR5u2VAOnjXl4FlTDh6tgn4Sk6MYwdXfT2sg7LeO4WtA4CTx0uF+1RymBgduvdW5XzXlVuAB8ZSz1NfkiDUkcE85f55ygkEVcvvjIwYNGNzKc822ZUHI7ZQPjphmmzWcPd5hv8s/RshrXBoQOKfVZWumfcF4UMTXX7wHYYzg6lL2LnuSd7nbo2J92sa1uS3FBJ585eBZUw6eNeXg2RLwPxRupFAy7upTAAAAAElFTkSuQmCC" InformativeScreenshot="f39f6712b885f710a403a0c611f8dba2.png" ScopeSelectorArgument="&lt;wnd app='ptagent.exe' cls='Win*Frame' title='fhmcwebconnect - Ericom Application Zone' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="91, 103, 63, 70" FriendlyName="'Lakewood Production'" FullSelectorArgument="&lt;wnd cls='SysListView32' /&gt;&lt;ctrl name='Lakewood Production' role='list item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SysListView32' /&gt;&lt;ctrl name='Lakewood Production' role='list item' automationid='' check:text='Lakewood Production' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAABKCAYAAADgxem7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUoSURBVHhe7ZnbixxFFMYbkYgSMBEkCt7w3adEwVEQvIARF1QQXBXx2rCgImwwXmBFRH1RGIlvgm7yIPjqwuCzD/OmqxtJnJ1k3VUzJpnFB/+Bz3OqurpPVap7emZ6dmd664OP6a5bn/Prquru3Wh5eRnB2tHCwgKCtSMEpQowhHYMxuLi4lDeDU0Uxvz8fOpOpzOUZd+d0kRg5AFYWVkZaLcPe6egVA5jbm4O/X5/IuaxJ6mJwPDd8So8szB8m+Ko5qUy0zDiOAa2T47t9g9LdYFxCrj8FXDpBHDxc+Cfj4HeB8Dfx4E/3yIvAJsvARvPAOeeBNaPAp0Hgd8b5CPAmbvQ/vbOmsDoE4iLX5I/IxAfEYT3gb+OqamPzVcIwrMJhEcp+QeAs/coAKr+9G3A2iG0Tx2sCYzLDIJmxIVPCMQSgXjb2gtw/mmg+zjNhocIxH0E4nBWt3YL8OuNaJ88UBMYl3hpfEoweGm8Y4FIk15/hGbF/QTiSFaWgMDq9QRjf01gKBAfEoh3s0Q3X1R7hDlXZWfuzo7XbicQhwjEAeDn6wjGtTWB0WMQ72WJbr0M/EFvkudpn+geTcvTegXiZuCXgwRjP8HYh/Y3+2oC4wJvmEmim68RiOcIxFME4jH91Dh7bwbi9B0E4iaCcANBYBDXAD9dRTCurgkMenJg602CQCA2ntcb5jlKaJ02THp8Rg8fr8RVabIwtt6gGUG/Gy9kILq0YXZ4wzysEvn3xBOF7vV6+OK733I9MzD++zEq9CAYg0CwZwIG7wO81ou8Z2CUcRGMMiDYUw2DxUDMU6LItYcRRZGCUcZ5MMqCYE8tDAbB09+3P/jMiXDi0rWDYbwVLaH/+tcqcVlurGC8eqttAcaXvDS3mSkYbFkmnQcjWvheOQ+IgcWgpxqG73+Yeb4ChgDhAyIhGE8tDN4UV1dXS7ssDB+EqYYhQfAMKfXLMESyeSB8EIynGkZpEPTLiUgbIAaC2XOKgEwdDAaxvb09tF0YbAlhJmGouzyKHRDsmYcxqlwQ7ABjTFelXYUxbQowhAIMoQBDKMAQCjCEAgyhAhgtxFEDzW5yOlDDtt9JlYstwBAKMIRGgtGKxcdW3DKloj0fi7puEw3TPoqpVo+RdnWvxe29fWUfUsm6RrM5ORiZXAB83EWzUZBoK6bg6IR+U1hc1mjoclK3aY65rxhLJSivV66Ox4tkDDkaDQYnklDPLqLbNwiESUrJuXvKHCWXN5rglq2YxmiZc4aZjKn66plklM6oQXXJ2FoFuQgND8MKQgSu2hMIOs+WDskTtJbpS/1SCNROJjIo4V2HwbPCClbC0MccVDY7EkieSNRycJYH//fe7ZuytQCUr6tomdjTWwep9wRVRncytmaGOU7aWNCyceyNVQTpnrOsvkPUiaVcwQa69xRgCAUYQgGGUIAhFGAIeWC4j9TBj6Ryko/eCuR7DI+pHBjZRdQLi/U2N6rGhVExTI8GwqguiNrB0McxfViZT3H7LVC8HrNEnf0WWHQNlnjLVWNyfXau32CdPrlxJO2a8o00vZClIZeJDqr428H0tevs7wP7Gva5BnFlwEV97Gv54pB/LkhvpKMSG6js6ASkLmoPXO7L0RlHnnvG1BquTxpHUT9HJZaJlFMXYLgDu9PTBGXX2ctEL4W0n5q6dt34y0TGkdfP1pgwSOrCZkk5dUWf0aIuimNPwGbMLEm+27o9Fzix5MbhxpyfnwfG3lWAIRRgCAUYQgGGUIAhFGCkAv4HT+tJ4HwHSQcAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="376,286" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="Assign - Out Dev App Message" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[out_message]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">["'Lakewood DEV App' does not found."]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:LogMessage DisplayName="Log Message-DEV App not found" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[out_message]" />
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="10, 103, 58, 70" FriendlyName="'Lakewood Dev'" FullSelectorArgument="&lt;wnd cls='SysListView32' /&gt;&lt;ctrl name='Lakewood Dev' role='list item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SysListView32' /&gt;&lt;ctrl name='Lakewood Dev' role='list item' automationid='' check:text='Lakewood Dev' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD4AAABKCAYAAADjcueTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATUSURBVHhe7Zjdi9RWFMCDFKVFUAvFClbFd5+0gX6AYFvQ4oIWCm5bSvq1sNCWwhY/WlgpUuelPoi+Cbr6UCjz5r747MO8dbZdi3Z2dbvb1qk6S1n8B47n3NyTnGTvZDIzyUwyyYEfk9yvub/7NclYMzMzUESU+OTkZOHwxIsWpXhaMTU11RWDilTEx8fHPRqNRlfIumlGouLtZGdnZzsSrkOkOQCJiY+NjUGr1UoFajvpSFTcNJNJkAtx04HVK7TccyM+MTEBsHq9b2q3pvMofgPgyRWAx5cAHl0A+O9HgOZZgH9PAfz9DYLft/wJwNIJgPvHARaOADQOAfz5OnIA4O4+qP28N4fiLZR+dBn5CaXPofD3AP98q5YvLH+Gwh9o4cMoehDgnq1kVf6dXQDz26F2Y1sOxZ+QNM70w/MoPY3SJwN7Fx68D7B4FGf5LZR+A6X3+3nzOwF+fwlq17fmUPwxLe8KitPyPh2Q9gQX3sHZfhOlD/hpWhrmtqD45hyKK+kfUPqML7XsqD3N9yrt7qv+9fxulN6O0lsB6i+g+PM5FG+S9He+1MqnAH/hE9gD3NeLR7x0L19J7wD4bRuKb0bxjVC7tjGH4g/pMNNSy1+g9Ico/R5Kv+ue3vde86Xv7EHpl1H4RRQm6U0Av25A8edyKI4nOKx8jcIovfSRe5jdx84v4GGGP1nW26cSoZ9IR3zlK5xp/Fz62JdexMOsQYfZftXp/y8di6TZbMLFX/5oSybFn962Iukk3kmayJw47Vvam1GMpHgcosTjSBOZEacgeT6toxgpccuylHgc2onHlSYyIU7StIRN+9kEdZokJbkWZ1asaWh9eVVJynRGiX/+ShAxCCZRCZXJrDgh0yTtxK3Jm4p28jwwNKiZEad24rJOXEib5KUwkwlxOrDm5uZiE1fcJJwZcSlNMx/rk8SFWDtpkzCTGfHY0vhJnZawPAvzGRElP1Rxkl5dXe2asDghhTMvrmavF0LSRK7Ee42wNFFY8V7oJ4YinoUoxYsWpfja2loh4CjFTYVGEQ6DeBUcy4ZKPVihPd2WHyTr+8ZRikcVjqYA4lVHvGg4VZ0uy9O1yKtXwObylgNV3YZT5TZD30XljXVlnfh5dqWSjLhPWJau61CxI6SqDnakrj69gaE023bT8b5e4WuqK9pSMvL74uVRe5bsA8LRnTh1Wo+m36Bb3kZpFlCEZkVBwpRuV6COZaoOtlHlexo43aaq664Qbs9bKZ3ydNtu3noXjvjigS8UndSjTDPnL/9weQnXxXqeMJaTne4kN1Bxmu1Ax6S4e00d8GddD4hcBRq1pENL3HH0VlBl3Lq8ZIOy8fN6WOrBJep2yN3DKg1nyAnMOF/rMoEB8tsJHnqiQ+H7dXW7yBPbscvDbbThKMVNhUYRjlLcVGgU4SjFTYV6p91PoqnsYOFIUVz+fuqBkE92Q4JjQOKIeugIPmoOA47BieunuuCjJm8FGpBQPiEfkxOCY0jioXx6PaUzgETFdvBePrw2+odjwOI6LTDbGiVM9cQLR8KzTXAMZ49H7Hf+M4I/w/n9wjEgcbqXy9a9N4rRoKi3v3QOQo4UxeVSDi97JLzcvb2tX21T+unjSEk8u3CU4qZCowhHKW4qNIpweOJFi4KKAzwDnjuvFrspJq0AAAAASUVORK5CYII=" InformativeScreenshot="63ca25b6b96a9263699930cb6cb4ce58.png" ScopeSelectorArgument="&lt;wnd app='ptagent.exe' cls='Win*Frame' title='fhmcwebconnect - Ericom Application Zone' /&gt;" SearchSteps="Selector, FuzzySelector">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="90, 31, 53, 23" FriendlyName="'Support'" FullSelectorArgument="&lt;wnd cls='ToolbarWindow32' idx='2' /&gt;&lt;ctrl name='Support' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='ToolbarWindow32' /&gt;&lt;ctrl name='Support' role='menu item' automationid='' check:text='Support' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADkAAAAbCAYAAADGfCe4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHTSURBVFhH7ZVLUgIxEEDnMCw9ACvmBMMaXM4eFe6AZQ1XEHUF7uAK6A1w69ob6IJN251OQgIdIsqnhFD1qpLuYarfdGcmgzP4nYfk/ewTtmG4ykuch1/waHj9+jFPAZKkRJIMIEnESJIBJEEiSUokyQCSRIzDSlYlZFmmKeEGY6clOaqghmLXzr5VYeG4Pq7kFPKsDpfPflwSJDZLUhcvKug7MU+QwEJiSBIxDic5m0ADx7TWmdsYy1G8Dq2REdH7sbMe0BTwmNP/ufiJKq4t5pDxMk7kAyPJUnmzbnOW5vSvksQcWhd8w4Yd1ZgkXo8TcEs5VTiKYY4lOXdnpfwcialO6hx3iyTxgVy9edI76qSDOp9GNCZp1ky3MMXrTiopxuaUVAldHadR7amcJLUvSaTfwXEpJltKzqGNkyBLOrmjSVb4NkUR3vPY0hka6rXqKokM6DPjSurrKOcVzyNpz6GQ88e1hB4WuedOcsH2kKsuYuGE+/0syrVONorlS8IUbjqZizlEiel7kgTeLyTVa+rrdvPi8bGSBizOZ3VcHQkt6Z7JEJs/ITKSILFR0jztVU5KUsITJLAQn7OQXEeSiJEkA0iCRJKU+JeS7x8LOG0W8A0IbVkUCFg7qAAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NCheckState.Target>
+                      </uix:NCheckState>
+                    </Sequence>
+                  </ActivityAction>
+                </uix:NApplicationCard.Body>
+                <uix:NApplicationCard.TargetApp>
+                  <uix:TargetApp Area="116, 108, 500, 350" FilePath="C:\Program Files (x86)\Ericom Software\PowerTerm WebConnect 5.8 Clients\ptagent.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAT+SURBVFhHxdRrTFtlGAdw4mV+WGJiYmKi8TIxZjOKzhhj/GCmLmr8sDh1GbrNbe6ii8MNd8EFQUFQxC27UMZlDCgUkHFnF8AVQke34WA37hcLtPQC7SltaUsLLfw973ts1/acIkXjSP6cD4U+v+d5n/eEha2OwV0N+bUyrvauxA8wI94MV8FWuAs/p5mVbMNs0XbMkRTvoEHJTr/MaTrBmJ0obBiBuH6YPiUXlSiWjuK3JjXONGtQLtOiokWHKvk4qi+Po+aKnoYHcOZtwnT+ZhqC+UdQSwYsthm0dhuQe06BvAtDISF4AHvOp3Cc3gBH7kaaeUEEoO2GweSE+IICOWcHQ0bwALbs9WwiKcSTYCBXswhm6zTkHePIrOpHds1AyAgewJLxMSYz19FYswgmCEi8hZ69fsJBi56s7FsUggcwpX8IM8nJjygmGGhaeox2L7uhQ1pZN9LLexeF4AEm0j6gMYnWchECZUXS7rUGO9IruilgsYiggMD4guwXj9Pupdc0OF7aRbNYBA9gk57AZGUcTDlbhCEZ6+HS9ni79wAWi+AB5hgVzaxZh5mRdkxdlcBSEu0F2BpF9DPf7v8NggeYztoGV1k83JfEmFO03QHdqoe1LpV2r9bzu/dNKAgewPntyjuJfQXTog0c5m8ICbn3QoV9s1AED2A/EAHHwRfhiHnJDzN9ZC0tPmJ0YICdQFO7VrCwbxaC4AEse1dgMvo5WPc9D9v+F7wgcixDzBQS6hSo7TJghH0BdSj0EJUHPwqS+RCCAOarZ2gmop6Fec9yCrLGvoZZVSea+hk8dLARj8bJkClnp8Ei+pVmZFX1Chb3JBCRVd0PaZuO7hIPoNv5JMa/eAr6L5fBsOtpirGW/UjH/knudSz9poEiHomVIfn3YS+CFBAq7gn5nEyroVUD1ZgN5MelNfEB2u2Pe6Pb8QTG9kbApeS6X7L7HO6POi+IuN5nFCzsSU2LEkqdDW6THa4xM6Yu9cCUVi8wAbaoL8LT/bpT7Qjbxf4xm0BE3h9aiqhrHRUsrFBPwm20wqWZYN+iHbSw8chZGh7A2SWDrbkAptPR0Me/jZnhW6jv1tPuPYBARHiiHPIhM7rZ0ZLz9StsmIRr1Aj7+ZswplTD+FMVjIdrgwNqr/bQ7R7UMN74dh8M8V7GDXpLyA0hO0ELk47ZwkxcKZiYIu6ZVAFjao0wwJMH18RjTZwYRdKbFNDSOYw3j16ZF0EAtzVWzGrZUau5jie+K4Vhdy4MX+fBsL8QTGwJmIQyvykIAnxDIK29KgyoDfQWBAJWHb2M4nYNLez+c4KLzsQV9s2+Am4K8WdgTK5cOIAk/LNUNN9WoFepx+u/tvgVJgVdwybYi9jl2lSFmVY13HoLLeYH2JMP5oCEm0JiObcPCwWQLNuYgvYBNeTscZCXkGvASGNLvwb9W/nQv3oKzOoCWH+W02lYshv9AVHsMZApHPI/hgUDSCKTi+lOkMKWVDk0y09A9UAitI8dxnhEBphV+XQKbnYJyT33A5BEi3nLGBKAhNyStv5RKO/7AcqweKjYp/rhXzC2QgTDG3lg3pfQY5gZ1HHL5wsQWMaQAZ4pkEIEoLzne4wuTYIu/Bg9BuO7Ejir++gVJIX8ACQByxgygOwCWcbJJBkHIFNYksAdw8tZdA/IXpD3gCmlhg8IWMaQAfe+c4j+038Z+t2Bhf7fxOAvUREIZ6ZWFw4AAAAASUVORK5CYII=" InformativeScreenshot="21de15e029a2f5cbee9dc24d90299483.png" Selector="&lt;wnd app='ptagent.exe' cls='Win*Frame' title='fhmcwebconnect - Ericom Application Zone'/&gt;" />
+                </uix:NApplicationCard.TargetApp>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NApplicationCard>
+            </Sequence>
+          </uix:NCheckState.IfExists>
+          <uix:NCheckState.IfNotExists>
+            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,66" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="Assign - Out App Message" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_message]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["'Lakewood Desktop App' does not found."]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:LogMessage DisplayName="Log Message-App not found" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[out_message]" />
+            </Sequence>
+          </uix:NCheckState.IfNotExists>
+          <uix:NCheckState.Target>
+            <uix:TargetAnchorable DesignTimeRectangle="8, 101, 484, 219" ElementType="List" FriendlyName="'SysListView32'" FullSelectorArgument="&lt;wnd cls='SysListView32' /&gt;" FuzzySelectorArgument="&lt;wnd cls='SysListView32' /&gt;" ImageBase64="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" InformativeScreenshot="d1477fe7e3c365fde8efa795a04aa8c8.png" ScopeSelectorArgument="&lt;wnd app='ptagent.exe' cls='Win*Frame' title='fhmcwebconnect - Ericom Application Zone' /&gt;" SearchSteps="Selector, FuzzySelector">
+              <uix:TargetAnchorable.Anchors>
+                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                  <uix:Target DesignTimeRectangle="37, 31, 53, 23" FriendlyName="'Options'" FullSelectorArgument="&lt;wnd cls='ToolbarWindow32' idx='2' /&gt;&lt;ctrl name='Options' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='ToolbarWindow32' /&gt;&lt;ctrl name='Options' role='menu item' automationid='' check:text='Options' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADkAAAAbCAYAAADGfCe4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHnSURBVFhH7ZU/bsIwFIdzFlZ6AJZwArrCzlrCIVpVAk7QtB1h5gi0V2Du3BuwsLy+P3ZszDMkKZXaYqRPShw7/D4/28ngCn7XIfm02UFTynO8HfPcgpcY73FeFZJkDFXMB4MkyZqoggQGj5Ekm6CK+WCQJFkTVZDA4DGS5ElmY8iyrKJzt9XlLBhElVwtoJP1YLQ6lImhChIYPEY7SRbswXBp27Yw7J4RxSDCGnIaW1MqRBUkMHiMFpIilM8O28slVWQMBV1rYJC/I2lkJkF7yfJS3XJjRGbU1yznCVaZBd0SzwZrDC59q+XKy9f1yedW0PSbuG1C7xTJLYxu3Jj+4hKS3QXcB+0iKRUWSfxD7PdAz3hipHrHlfQlZVwldrBfzTtxYlhsTrJjmNrrW2zH8BrtJOtWkq+FYiDhT0qylASXZzuYmnF+P6neGvr23lS/U2BlUeD7krX2ZChpxvyUJN1j8Meid6HlSvDp6leTAvina3BvJwDDNF+uVtr1i0la0bCi7SSJ4Dspe9EigfKBzCw/5yoKtHS5/ezB47WfkuT9acfgpKDEZSQDnCAhgfw96T4hDgnfDBFUwOAxGku6GYvz5yVjVDLMVUgqYJAkWRNVkMDgMZJkE1QxHwzyqyQ/Pvfwv9nDFz3wOgW+MFKBAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector" />
+                </scg:List>
+              </uix:TargetAnchorable.Anchors>
+            </uix:TargetAnchorable>
+          </uix:NCheckState.Target>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NCheckState>
+      </If.Then>
+    </If>
+    <If Condition="[IsIcon.Equals(True) and IsDesktopApp.Equals(True) And IsLKWDevApp.Equals(True)]" DisplayName="If - Out App status" sap:VirtualizedContainerService.HintSize="1264,503" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence DisplayName="Seq-Login Success" sap:VirtualizedContainerService.HintSize="376,345" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Set Out App status" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_DesktopAppOpen]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Delay DisplayName="Delay for 20 Sec" Duration="00:00:20" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Opening Terminal....&quot;]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Assign DisplayName="Set out App Status - False" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Boolean">[out_DesktopAppOpen]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+          </Assign.Value>
+        </Assign>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

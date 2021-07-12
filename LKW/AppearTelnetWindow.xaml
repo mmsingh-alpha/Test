@@ -1,0 +1,121 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AppearTelnetWindow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_MenuOpen" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>1240,730</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>StringtoSecureString.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.AzureActiveDirectory.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Seq- Appear Telnet Window" sap:VirtualizedContainerService.HintSize="848,565" sap2010:WorkflowViewState.IdRef="Sequence_53">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Delay DisplayName="Delay for 20 sec" Duration="00:00:20" sap:VirtualizedContainerService.HintSize="806,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
+    <uix:NCheckState CheckVisibility="True" DisplayName="Check App State 'Terminal'" Exists="[out_MenuOpen]" sap:VirtualizedContainerService.HintSize="806,411" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="30">
+      <uix:NCheckState.IfExists>
+        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,185" sap2010:WorkflowViewState.IdRef="Sequence_66">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log App Initialization message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;Telnet window appears &quot; + out_MenuOpen.ToString]" />
+        </Sequence>
+      </uix:NCheckState.IfExists>
+      <uix:NCheckState.IfNotExists>
+        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="376,185" sap2010:WorkflowViewState.IdRef="Sequence_67">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log App Initialization message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Info" Message="[&quot;Telnet does not window appears &quot; + out_MenuOpen.ToString]" />
+        </Sequence>
+      </uix:NCheckState.IfNotExists>
+      <uix:NCheckState.Target>
+        <uix:TargetAnchorable DesignTimeRectangle="8, 51, 1108, 33" FriendlyName="'TOOLBAR_WIN'" FullSelectorArgument="&lt;wnd cls='TOOLBAR_WIN' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TOOLBAR_WIN' /&gt;" ImageBase64="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" InformativeScreenshot="18b2dbfd0bca1e423382bb15d6e0230e.png" ScopeSelectorArgument="&lt;wnd app='ptermx.exe' cls='TERM' title='Lakewood Dev - PowerTerm WebConnect HostView' /&gt;" SearchSteps="Selector, FuzzySelector">
+          <uix:TargetAnchorable.Anchors>
+            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+              <uix:Target DesignTimeRectangle="74, 31, 60, 19" FriendlyName="'Terminal'" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Terminal' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Terminal' role='menu item' automationid='' check:text='Terminal' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAAXCAYAAAC74kmRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEOSURBVFhH7VUBDsMgCPRdPoh3+ARf42f6iaYfYKI0U1vd3IxLhpcQREHxkFahcCwCWIvFIoC1WCwCWIvFWwQ4UKjUVbTd2GMgNotaafx8a4fQEd/5Avo2/w0WAZMJCE/2bAvwHoToB6B5juPc0xe842ZpvWyn9AweW7jx86tpa9KGcfaaYwNfElDYDjhBmi8v5ZPUFsOM98suE+ycvLjEceflMr8UZcwsArLqs4RkyyR67NqYUNhMZJRaTBsDCHhVEUKPXRsTEjs7e0OrazFtDGiBu99hI/GAll0bExKbqn+2VPbrLGPaGPwRnNkCVHU+UwPCnBfwf1gEsBaLRcBxHChZ1L7vKFmUMQblisEH7cQp5zfQACIAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector" />
+            </scg:List>
+          </uix:TargetAnchorable.Anchors>
+        </uix:TargetAnchorable>
+      </uix:NCheckState.Target>
+    </uix:NCheckState>
+  </Sequence>
+</Activity>
