@@ -3,8 +3,9 @@
     <x:Property Name="in_AdminUserID" Type="InArgument(x:String)" />
     <x:Property Name="in_Password" Type="InArgument(x:String)" />
     <x:Property Name="out_LoginSuccess" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_Message" Type="OutArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1019,1768</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,2160</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -81,19 +82,20 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Login to Lakwood App" sap:VirtualizedContainerService.HintSize="602,1603" sap2010:WorkflowViewState.IdRef="Sequence_59">
+  <Sequence DisplayName="Login to Lakwood App" sap:VirtualizedContainerService.HintSize="1023,1995" sap2010:WorkflowViewState.IdRef="Sequence_59">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Lakewood Dev - PowerTerm WebConnect HostView" sap:VirtualizedContainerService.HintSize="560,1297" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" Version="V1">
+    <Delay DisplayName="Delay for 5sec" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="981,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Lakewood Dev - PowerTerm WebConnect HostView" sap:VirtualizedContainerService.HintSize="981,1841" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,1008" sap2010:WorkflowViewState.IdRef="Sequence_68">
+          <Sequence DisplayName="Do -If Telnet window found" sap:VirtualizedContainerService.HintSize="947,1552" sap2010:WorkflowViewState.IdRef="Sequence_68">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="TerminalOpen" />
             </Sequence.Variables>
@@ -102,7 +104,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ScreenVerification workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="LKW\ScreenVerification.xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ScreenVerification workflow" sap:VirtualizedContainerService.HintSize="905,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="LKW\ScreenVerification.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_Search_String">
                   <Literal x:TypeArguments="x:String">login as:</Literal>
@@ -112,15 +114,15 @@
                 </OutArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <If Condition="[TerminalOpen.Equals(True)]" sap:VirtualizedContainerService.HintSize="484,764" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[TerminalOpen.Equals(True)]" DisplayName="If Unix Terminal window Appear" sap:VirtualizedContainerService.HintSize="905,1306" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,586" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                <Sequence DisplayName="Seq-If terminalOpen" sap:VirtualizedContainerService.HintSize="526,1147" sap2010:WorkflowViewState.IdRef="Sequence_69">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Terminal'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_6" Text="[in_AdminUserID + &quot;[k(enter)]&quot;]">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Terminal'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="484,226" sap2010:WorkflowViewState.IdRef="NTypeInto_6" Text="[in_AdminUserID + &quot;[k(enter)]&quot;]">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable DesignTimeRectangle="8, 84, 1091, 308" FriendlyName="'client'" FullSelectorArgument="&lt;wnd cls='TERMWIN' /&gt;&lt;ctrl role='client' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TERMWIN' /&gt;&lt;ctrl role='client' automationid='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABEcAAAE4CAYAAAC5ap09AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAlASURBVHhe7dzBaRtRFEBR7dJCakkFacLrLNOCIZBNOsgui/ShBuydSBvqQEEhMwghjP4IxpbveXDAoPdn4O90Ed48Pz8fPn77c9hutwAAAAA5cxzZbDYAAAAAPeIIAAAAUHSc/X4vjgAAAABN4ggAAACQJo4AAAAAaeIIAAAAkCaOAAAAAGniCAAAAJAmjgAAAABp4ggAAACQJo4AAAAAaeIIAAAAkCaOAAAAAGniyAu22+0/lz4DAAAA3odXjyMCBAAAAPCa7i6OTPsj587PjJ679Nm502ePnFtiyXuWnDka3QcAAIB7c1dx5Hz3mrNLzkxu2R05e4tr3nO+c82ZycguAAAA3CNx5AW37I6cHTU9+9SlvVMjuwAAAFAijrzglt2RsyNuec+0e+0+AAAAFBzn6elJHLnklt2RsyOWvGfJmcnILgAAANyju4ojR9P+yLnzM6PnLn127nx35Oyo6dmnLu2dGt2fjO4DAADAvXn1OLI2X/bfjiVz6TkAAABwi+O8+zgyBRFh5G1ZMpeeAwAAALc4TuqXIwAAAACnxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBtjiO/f3wSRwAAAICcOY78/PpBHAEAAABy5jjy67tfjgAAAAA9cxzxP0cAAACAInEEAAAASBNHAAAAgDRxBAAAAEg7zn6/F0cAAACAJnEEAAAASBNHAAAAgDRxBAAAAEgTRwAAAIA0cQQAAABIE0cAAACANHEEAAAASBNHAAAAgLQ5jjw8PIgjAAAAQM4cR3a7nTgCAAAA5IgjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKTNcWTz+Ys4AgAAAOSIIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABA2hxHdrudOAIAAADkiCMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQJo4AgAAAHA0xRGz7jw+Pv7/y6w17nz9cefrjvted9z3uuO+1x33ve6473XHfa877nvdcd9L53D4C4U52fv1DyytAAAAAElFTkSuQmCC" InformativeScreenshot="910e9de964230e12e99a801627055ae8.png" ScopeSelectorArgument="&lt;wnd app='ptermx.exe' cls='TERM' title='Lakewood Dev - PowerTerm WebConnect HostView' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
                         <uix:TargetAnchorable.Anchors>
@@ -131,7 +133,7 @@
                       </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Terminal'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_7" Text="[in_Password + &quot;[k(enter)]&quot;]">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Terminal'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="484,226" sap2010:WorkflowViewState.IdRef="NTypeInto_7" Text="[in_Password + &quot;[k(enter)]&quot;]">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable DesignTimeRectangle="8, 84, 1091, 308" FriendlyName="'client'" FullSelectorArgument="&lt;wnd cls='TERMWIN' /&gt;&lt;ctrl role='client' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TERMWIN' /&gt;&lt;ctrl role='client' automationid='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABEcAAAE4CAYAAAC5ap09AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAkuSURBVHhe7dzBiVNRFIDh7GzBWqzAJmbt0hYGBDd24M6FfaSBmV2wjXQQifge4RFDbgJviP934AMh5yRwd/6Im9fX18P7L78O2+0WAAAAIGeOI5vNBgAAAKBHHAEAAACKjrPf78URAAAAoEkcAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRy5YLvd/nHuMwAAAOD/8OZxRIAAAAAA3tLDxZFpf+RueTN6d+6zpdPvHrm7xS2/c8vN0eg+AAAAPJqHiiPL3Wtub7mZ3LM7cnuPa35nuXPNzWRkFwAAAB6ROHLBPbsjt6Om7z51bu/UyC4AAACUiCMX3LM7cjvint+Zdq/dBwAAgILjvLy8iCPn3LM7cjvilt+55WYysgsAAACP6KHiyNG0P3K3vBm9O/fZ0nJ35HbU9N2nzu2dGt2fjO4DAADAo3nzOLI2f9kHAAAATiXiyBREhBEAAABgKRFHAAAAAP5FHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLmOPLz2wdxBAAAAMiZ48j3z+/EEQAAACBnjiM/vvqXIwAAAEDPHEf8nyMAAABAkTgCAAAApIkjAAAAQJo4AgAAAKQdZ7/fiyMAAABAkzgCAAAApIkjAAAAQJo4AgAAAKSJIwAAAECaOAIAAACkiSMAAABAmjgCAAAApIkjAAAAQNocR56ensQRAAAAIGeOI7vdThwBAAAAcsQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLmOLL5+EkcAQAAAHLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgbY4ju91OHAEAAAByxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAANLEEQAAACBNHAEAAADSxBEAAAAgTRwBAAAA0sQRAAAAIE0cAQAAADia4ohZd56fn//+yaw13nz98ebrjvded7z3uuO91x3vve5473XHe6873nvd8d63zuHwG3A1jEmt/9bzAAAAAElFTkSuQmCC" InformativeScreenshot="98381661b22451239f77388dce821c9f.png" ScopeSelectorArgument="&lt;wnd app='ptermx.exe' cls='TERM' title='Lakewood Dev - PowerTerm WebConnect HostView' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
                         <uix:TargetAnchorable.Anchors>
@@ -142,8 +144,69 @@
                       </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
+                  <Delay DisplayName="Delay for 15 Sec" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ScreenVerification workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="LKW\ScreenVerification.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Search_String">
+                        <Literal x:TypeArguments="x:String" xml:space="preserve">FHMC Lakewood ; develop  Menu</Literal>
+                      </InArgument>
+                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_result">
+                        <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_LoginSuccess" />
+                      </OutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <If Condition="[out_LoginSuccess.Equals(False)]" DisplayName="If admin login failed." sap:VirtualizedContainerService.HintSize="484,307" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Then>
+                      <ui:MultipleAssign DisplayName="Assign-IfTerminalNotOpen" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                        <ui:MultipleAssign.AssignOperations>
+                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[out_LoginSuccess]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:String">[out_Message]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:String" xml:space="preserve">["Login failed for admin user:  " + in_AdminUserID]</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                          </scg:List>
+                        </ui:MultipleAssign.AssignOperations>
+                      </ui:MultipleAssign>
+                    </If.Then>
+                  </If>
                 </Sequence>
               </If.Then>
+              <If.Else>
+                <ui:MultipleAssign DisplayName="Assign-IfTerminalNotOpen" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                  <ui:MultipleAssign.AssignOperations>
+                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[out_LoginSuccess]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[out_Message]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">Unix Telnet window does not found.</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                    </scg:List>
+                  </ui:MultipleAssign.AssignOperations>
+                </ui:MultipleAssign>
+              </If.Else>
             </If>
           </Sequence>
         </ActivityAction>
@@ -152,16 +215,5 @@
         <uix:TargetApp Area="0, 0, 1124, 437" FilePath="D:\Users\mansing1\AppData\Local\Ericom\PowerTerm WebConnect 6.0\webconnect.fhmc.local\ptermx.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKySURBVFhHxZPLaxNRHEaDSEUp2ApSBV+4d9Uq+ADBB1gxoIJgVMRnoKAiRIwPiIioG11I3QmadiG4NRvXLrLTaCqtaWpM1Ma2CS78Bz6/3+1M5ybzyEwmwQuHJJPcOefOvYn4GYlEAkEwpoUbsVgMJoVCIRD6XON2/oebNJPJtKR5jhAoJBqNolardQW5t6FxH/Ijp5V1gkABTgerXWQbAgfE43GgPhaa7LtUmIBxYOEFMD8KzD0Ffj8EqveAX0ngx3UyApTPA6WTwMwxYHoYKOwDvu4iQ8DkNmRfbw0RUKN87jl5QvkDiu8CP2+ox4ryRYpPGeJDFO4FpnYoqfp+YhOQH0B2vD9EwILIufLZR5SnKL/ZsLf4dgIoHuGq91O+m/JB67v8BuDzWmTH+kIEzMtjf8wAeey3GuRLoumDXP0eyoesa4YcudUM6A0RoOT3Kb9t3bx8Tu25+Vldm9xuvc9vpnyA8j7g4yoGrAwRUBX5HevmlQvA9xgfPfe9OLx0fel7JV8PfOpnQC8DepB91RMiYFYOnXHz8mXKT1N+nPLDi6d9aqcln9hC+TqK11As8hXAh2UMWB4igCcelWsUU146s3joZqLcdx46/tUiB5KdQR8NAZWrXDlfS2cteZGHriCHblBN/jN61JNqtYpnb7644hnw933Ek1YBreSCa4Dsq+ydF10N8INXgB+5YAuQIRHm6faiWwHq7+IHtwC/cqE5QD1ap/12QiaLTKcjASaVSAq1Ky+VTL9uogIubWxEi3ES6shvWgYI+jUdt4DIyFuFW4QZKIuzBaTTad/YAjS5U4QuNmkIkIOVy+V84zfASWwL0OX86O9VAjSBm9xJbGILsEk8XtVkDTPCFJtnyCtCzRV5vV4PTHOAoIt9B6jVtEOTXGg3oL3RJBf+e0BwkvgHe2f17EYyZ+IAAAAASUVORK5CYII=" InformativeScreenshot="a1b4f373740490375eaff83824c01d4b.png" Selector="&lt;wnd app='ptermx.exe' cls='TERM' title='Lakewood Dev - PowerTerm WebConnect HostView'/&gt;" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <Delay DisplayName="Delay for 15 Sec" Duration="00:00:15" sap:VirtualizedContainerService.HintSize="560,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ScreenVerification workflow" sap:VirtualizedContainerService.HintSize="560,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="LKW\ScreenVerification.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Search_String">
-          <Literal x:TypeArguments="x:String" xml:space="preserve">FHMC Lakewood ; develop  Menu</Literal>
-        </InArgument>
-        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_result">
-          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_LoginSuccess" />
-        </OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>

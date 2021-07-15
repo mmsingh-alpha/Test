@@ -1,0 +1,152 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ExitFromLakewoodApp" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,1393" sap2010:WorkflowViewState.IdRef="ExitFromLakewoodApp_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="54">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>StringtoSecureString.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.AzureActiveDirectory.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Callout.Activity</AssemblyReference>
+      <AssemblyReference>UiPath.Form.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ExitFromLakewoodApp" sap:VirtualizedContainerService.HintSize="822,1229" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="TerminalWindowOpen" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NCheckState DisplayName="Check App State 'Terminal'" Exists="[TerminalWindowOpen]" sap:VirtualizedContainerService.HintSize="780,1137" sap2010:WorkflowViewState.IdRef="NCheckState_1">
+      <uix:NCheckState.IfExists>
+        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="476,911" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Lakewood Dev - PowerTerm WebConnect HostView" sap:VirtualizedContainerService.HintSize="434,817" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,528" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Terminal'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="46, 56, 26, 24" FriendlyName="'TOOLBAR_BUTTON'" FullSelectorArgument="&lt;wnd cls='TOOLBAR_BUTTON' idx='2' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TOOLBAR_BUTTON' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB4AAAAcCAYAAAB2+A+pAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACeSURBVEhL7dBRDoQgDEVRls7S2BnjI9Y8ayvNZALzUZMTRbA3sbTW+g4ZXibDy/xvuNb6wPu9FBef00JhXMeoAetCQ0cEFwVlzXO0UBijhBmm2HWnM5avfrUZBooCz9Few4h47yV+hSQq93PfMw17bmGK8VrPY9NfjYAH+8eDS89i07CQ0JvIGZFh19ZwhPWtJRz+tQwvk+FlNoVb/wBUDyZ/Gr2g4wAAAABJRU5ErkJggg==" InformativeScreenshot="2bf14e21bb9b6bda7ac00856c7b94aff.png" ScopeSelectorArgument="&lt;wnd app='ptermx.exe' cls='TERM' title='Lakewood Dev - PowerTerm WebConnect HostView' /&gt;" SearchSteps="FuzzySelector, Image">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="74, 31, 60, 19" FriendlyName="'Terminal'" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Terminal' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Terminal' role='menu item' automationid='' check:text='Terminal' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAAXCAYAAAC74kmRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEOSURBVFhH7VUBDsMgCPRdPoh3+ARf42f6iaYfYKI0U1vd3IxLhpcQREHxkFahcCwCWIvFIoC1WCwCWIvFWwQ4UKjUVbTd2GMgNotaafx8a4fQEd/5Avo2/w0WAZMJCE/2bAvwHoToB6B5juPc0xe842ZpvWyn9AweW7jx86tpa9KGcfaaYwNfElDYDjhBmi8v5ZPUFsOM98suE+ycvLjEceflMr8UZcwsArLqs4RkyyR67NqYUNhMZJRaTBsDCHhVEUKPXRsTEjs7e0OrazFtDGiBu99hI/GAll0bExKbqn+2VPbrLGPaGPwRnNkCVHU+UwPCnBfwf1gEsBaLRcBxHChZ1L7vKFmUMQblisEH7cQp5zfQACIAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <Delay DisplayName="05 Sec Delay" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Close'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="1326, 8, 47, 22" ElementType="Button" FriendlyName="'Close'" FullSelectorArgument="&lt;ctrl name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Close' role='push button' automationid='' check:text='Close' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADMAAAAaCAYAAAAaAmTUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACESURBVFhH7dLRBoBAFEXR+5L6/++afyqHhmiMyNaRs18ql+muVMm1/ScF41owriEYHdlaO5/uaUZ8QwSjZZd1G4Jms7chGDVamoQoDKOuy9MQhWJUR9AQFczTOkTX6z0VhhktT4MQzGxpEoRgdORsWc2A13K/2RcF41owrgXjWjCuVVUdZz9gq+tVs1MAAAAASUVORK5CYII=" InformativeScreenshot="454c133b3bfc84ad789a131b59f03f18.png" ScopeSelectorArgument="&lt;wnd app='ptermx.exe' cls='TERM' title='Lakewood Dev - PowerTerm WebConnect HostView' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="74, 31, 60, 19" FriendlyName="'Terminal'" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Terminal' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Terminal' role='menu item' automationid='' check:text='Terminal' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAAXCAYAAAC74kmRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEOSURBVFhH7VUBDsMgCPRdPoh3+ARf42f6iaYfYKI0U1vd3IxLhpcQREHxkFahcCwCWIvFIoC1WCwCWIvFWwQ4UKjUVbTd2GMgNotaafx8a4fQEd/5Avo2/w0WAZMJCE/2bAvwHoToB6B5juPc0xe842ZpvWyn9AweW7jx86tpa9KGcfaaYwNfElDYDjhBmi8v5ZPUFsOM98suE+ycvLjEceflMr8UZcwsArLqs4RkyyR67NqYUNhMZJRaTBsDCHhVEUKPXRsTEjs7e0OrazFtDGiBu99hI/GAll0bExKbqn+2VPbrLGPaGPwRnNkCVHU+UwPCnBfwf1gEsBaLRcBxHChZ1L7vKFmUMQblisEH7cQp5zfQACIAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 655" FilePath="C:\Program Files (x86)\Ericom Software\PowerTerm WebConnect 5.8 Clients\ptermx.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKySURBVFhHxZPLaxNRHEaDSEUp2ApSBV+4d9Uq+ADBB1gxoIJgVMRnoKAiRIwPiIioG11I3QmadiG4NRvXLrLTaCqtaWpM1Ma2CS78Bz6/3+1M5ybzyEwmwQuHJJPcOefOvYn4GYlEAkEwpoUbsVgMJoVCIRD6XON2/oebNJPJtKR5jhAoJBqNolardQW5t6FxH/Ijp5V1gkABTgerXWQbAgfE43GgPhaa7LtUmIBxYOEFMD8KzD0Ffj8EqveAX0ngx3UyApTPA6WTwMwxYHoYKOwDvu4iQ8DkNmRfbw0RUKN87jl5QvkDiu8CP2+ox4ryRYpPGeJDFO4FpnYoqfp+YhOQH0B2vD9EwILIufLZR5SnKL/ZsLf4dgIoHuGq91O+m/JB67v8BuDzWmTH+kIEzMtjf8wAeey3GuRLoumDXP0eyoesa4YcudUM6A0RoOT3Kb9t3bx8Tu25+Vldm9xuvc9vpnyA8j7g4yoGrAwRUBX5HevmlQvA9xgfPfe9OLx0fel7JV8PfOpnQC8DepB91RMiYFYOnXHz8mXKT1N+nPLDi6d9aqcln9hC+TqK11As8hXAh2UMWB4igCcelWsUU146s3joZqLcdx46/tUiB5KdQR8NAZWrXDlfS2cteZGHriCHblBN/jN61JNqtYpnb7644hnw933Ek1YBreSCa4Dsq+ydF10N8INXgB+5YAuQIRHm6faiWwHq7+IHtwC/cqE5QD1ap/12QiaLTKcjASaVSAq1Ky+VTL9uogIubWxEi3ES6shvWgYI+jUdt4DIyFuFW4QZKIuzBaTTad/YAjS5U4QuNmkIkIOVy+V84zfASWwL0OX86O9VAjSBm9xJbGILsEk8XtVkDTPCFJtnyCtCzRV5vV4PTHOAoIt9B6jVtEOTXGg3oL3RJBf+e0BwkvgHe2f17EYyZ+IAAAAASUVORK5CYII=" InformativeScreenshot="ce29e62f31a4273664802aba8b111331.png" Selector="&lt;wnd app='ptermx.exe' cls='TERM' title='Lakewood Dev - PowerTerm WebConnect HostView'/&gt;" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </Sequence>
+      </uix:NCheckState.IfExists>
+      <uix:NCheckState.IfNotExists>
+        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </uix:NCheckState.IfNotExists>
+      <uix:NCheckState.Target>
+        <uix:TargetAnchorable DesignTimeRectangle="8, 31, 1366, 19" ElementType="Toolbar" FriendlyName="'Application'" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' check:text='Application' /&gt;" ImageBase64="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" InformativeScreenshot="76adbfe524c8013a52a23540434cff03.png" ScopeSelectorArgument="&lt;wnd app='ptermx.exe' cls='TERM' title='Lakewood Dev - PowerTerm WebConnect HostView' /&gt;" SearchSteps="Selector, FuzzySelector">
+          <uix:TargetAnchorable.Anchors>
+            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+              <uix:Target DesignTimeRectangle="74, 31, 60, 19" FriendlyName="'Terminal'" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Terminal' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Terminal' role='menu item' automationid='' check:text='Terminal' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAAXCAYAAAC74kmRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEOSURBVFhH7VUBDsMgCPRdPoh3+ARf42f6iaYfYKI0U1vd3IxLhpcQREHxkFahcCwCWIvFIoC1WCwCWIvFWwQ4UKjUVbTd2GMgNotaafx8a4fQEd/5Avo2/w0WAZMJCE/2bAvwHoToB6B5juPc0xe842ZpvWyn9AweW7jx86tpa9KGcfaaYwNfElDYDjhBmi8v5ZPUFsOM98suE+ycvLjEceflMr8UZcwsArLqs4RkyyR67NqYUNhMZJRaTBsDCHhVEUKPXRsTEjs7e0OrazFtDGiBu99hI/GAll0bExKbqn+2VPbrLGPaGPwRnNkCVHU+UwPCnBfwf1gEsBaLRcBxHChZ1L7vKFmUMQblisEH7cQp5zfQACIAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector" />
+            </scg:List>
+          </uix:TargetAnchorable.Anchors>
+        </uix:TargetAnchorable>
+      </uix:NCheckState.Target>
+    </uix:NCheckState>
+  </Sequence>
+</Activity>

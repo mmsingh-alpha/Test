@@ -6,10 +6,12 @@
     "StringtoSecureString.Activities": "[1.0.0]",
     "UiPath.AzureActiveDirectory.Activities": "[1.1.7]",
     "UiPath.Excel.Activities": "[2.10.4]",
+    "UiPath.Form.Activities": "[1.3.0]",
     "UiPath.Mail.Activities": "[1.10.5]",
     "UiPath.System.Activities": "[20.10.4]",
     "UiPath.Terminal.Activities": "[2.2.0]",
-    "UiPath.UIAutomation.Activities": "[21.4.4]"
+    "UiPath.UIAutomation.Activities": "[21.4.4]",
+    "UiPath.WebAPI.Activities": "[1.8.0-preview]"
   },
   "webServices": [],
   "entitiesStores": [],
